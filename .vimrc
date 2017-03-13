@@ -25,6 +25,7 @@ set laststatus=2
 "Mappings
 let mapleader=','
 nnoremap <leader>gg :GitGutterToggle<CR>
+nnoremap <leader>gst :Gstatus<CR>
 
 "Colorscheme
 set t_Co=256
