@@ -13,30 +13,31 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jpo/vim-railscasts-theme'
 Plugin 'carakan/new-railscasts-theme'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 
 "Airline
 let g:airline_theme='simple'
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
-set t_Co=256
 set laststatus=2
 
+"Mappings
+let mapleader=','
+nnoremap <leader>gg :GitGutterToggle<CR>
+
 "Colorscheme
+set t_Co=256
 set background=dark
 colorscheme monokai
 
-
-"set statusline+=%F
-
+"File specific
 filetype plugin indent on " Required
-set nu
-set tabstop=2
-set shiftwidth=2
 syntax enable
 
-
-"spacing
+"Spacing
+set tabstop=2
+set shiftwidth=2
 set noexpandtab
 set copyindent
 set preserveindent
@@ -46,9 +47,11 @@ set backspace=indent,eol,start
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 
 set hidden
-set autowrite
+set nu
+set noautowrite
 set nowrap
 
+"Natural splitting
 set splitbelow
 set splitright
 
