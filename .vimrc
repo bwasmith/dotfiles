@@ -14,18 +14,30 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jpo/vim-railscasts-theme'
 Plugin 'carakan/new-railscasts-theme'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'gcmt/taboo.vim'
 
 call vundle#end()
 
 "Airline
-let g:airline_theme='simple'
-let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 set laststatus=2
+let g:airline_theme='simple'
+
+"let g:airline_powerline_fonts = 1
+let g:airline#extensions#taboo#enabled = 1
+let g:taboo_renamed_tab_format=" ~%N~[%l]%m "
+let g:taboo_tab_format=" ~%N~ %f%m "
+
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#show_buffers = 1
+"let g:airline#extensions#tabline#show_tabs = 1
+"let g:airline#extensions#tabline#show_tab_type = 1
 
 "Mappings
 let mapleader=','
 nnoremap <leader>gg :GitGutterToggle<CR>
 nnoremap <leader>gst :Gstatus<CR>
+vnoremap <leader># I#<Esc>
 
 "Colorscheme
 set t_Co=256
