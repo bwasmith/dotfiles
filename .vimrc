@@ -40,8 +40,6 @@ nnoremap <leader>gst :Gstatus<CR>
 vnoremap <leader># I#<Esc>
 
 "Colorscheme
-set t_Co=256
-set background=dark
 colorscheme monokai
 
 "File specific
