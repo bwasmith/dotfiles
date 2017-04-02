@@ -1,3 +1,6 @@
+
+"to install Vundle:
+"git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 set nocompatible
 filetype off " Required
 
@@ -17,6 +20,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'gcmt/taboo.vim'
 
 call vundle#end()
+filetype plugin indent on " Required
 
 "Airline
 set laststatus=2
@@ -43,7 +47,6 @@ vnoremap <leader># I#<Esc>
 colorscheme monokai
 
 "File specific
-filetype plugin indent on " Required
 syntax enable
 
 "Spacing
@@ -55,7 +58,6 @@ set preserveindent
 set softtabstop=0
 
 "fold level
-
 set foldlevelstart=20
 set foldmethod=syntax
 
