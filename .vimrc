@@ -54,6 +54,11 @@ set copyindent
 set preserveindent
 set softtabstop=0
 
+"fold level
+
+set foldlevelstart=20
+set foldmethod=syntax
+
 set backspace=indent,eol,start
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 
