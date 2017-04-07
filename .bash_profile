@@ -22,8 +22,6 @@ alias ls="ls -G"
 alias ctags="`brew --prefix`/bin/ctags"
 
 
-export HOMEBREW_GITHUB_API_TOKEN="759c3a9e1ca1cc811743e347ea1401481e4ce5ac"
-
 #long_path
 PS1=$'\[\033[0;36m\]\xe2\x97\x8e\[\033[m\] \u@\h:\w \n\$ '
 	
