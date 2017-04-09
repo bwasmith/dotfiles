@@ -21,9 +21,12 @@ alias ll="ls -FGlAhp"
 alias ls="ls -G"
 alias ctags="`brew --prefix`/bin/ctags"
 
+parse_git_branch(){
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1]/'
+}
 
 #long_path
-PS1=$'\[\033[0;36m\]\xe2\x97\x8e\[\033[m\] \u@\h:\w \n\$ '
+PS1=$'\[\033[0;36m\]\xe2\x97\x8e\[\033[m\] \u@\h: \w\n \[\033[32m\]$(parse_git_branch)\[\033[00m\] \$ '
 	
 source ~/.iterm2_shell_integration.`basename $SHELL`
 
