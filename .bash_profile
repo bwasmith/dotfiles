@@ -25,9 +25,14 @@ parse_git_branch(){
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1]/'
 }
 
+make_special_character(){
+	echo -e '\033[0;36m\xe2\x97\x8e\033[0;m'
+}
+
 #long_path
-PS1=$'\[\033[0;36m\]\xe2\x97\x8e\[\033[m\] \u@\h: \w\n \[\033[32m\]$(parse_git_branch)\[\033[00m\] \$ '
-	
+#PS1=$'\n\[\033[0;36m\]\xe2\x97\x8e\[\033[m\] \u@\h: \w $(parse_git_branch)\n \$ '
+PS1='$(printf "%*s\r%s" $(( COLUMNS-1 )) "$(parse_git_branch) $(date +%H:%M:%S)" "$(make_special_character) \u@\h: \w\n \$ ")'
+
 source ~/.iterm2_shell_integration.`basename $SHELL`
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
