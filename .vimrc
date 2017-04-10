@@ -69,6 +69,8 @@ set nu
 set noautowrite
 set nowrap
 
+set cursorline
+
 "Natural splitting
 set splitbelow
 set splitright
