@@ -14,10 +14,9 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'jpo/vim-railscasts-theme'
-Plugin 'carakan/new-railscasts-theme'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'gcmt/taboo.vim'
+Plugin 'Konfekt/FastFold'
 
 call vundle#end()
 filetype plugin indent on " Required
@@ -68,8 +67,6 @@ set hidden
 set nu
 set noautowrite
 set nowrap
-
-set cursorline
 
 "Natural splitting
 set splitbelow
