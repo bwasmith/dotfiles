@@ -9,7 +9,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-rails'
-Plugin 'closetag.vim'
+Plugin 'vim-scripts/closetag.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
@@ -17,6 +17,11 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'gcmt/taboo.vim'
 Plugin 'Konfekt/FastFold'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-ragtag'
+Plugin 'alvan/vim-closetag'
 
 call vundle#end()
 filetype plugin indent on " Required
@@ -36,11 +41,17 @@ let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 "let g:airline#extensions#tabline#show_tabs = 1
 "let g:airline#extensions#tabline#show_tab_type = 1
 
+"Nerdtree
+map <C-n> :NERDTreeToggle<CR>
+
 "Mappings
 let mapleader=','
 nnoremap <leader>gg :GitGutterToggle<CR>
 nnoremap <leader>gst :Gstatus<CR>
 vnoremap <leader># I#<Esc>
+"remove whitespace
+nnoremap <leader>ww :%s/\s\+$//e 
+inoremap <A-o> <Esc>o
 
 "Colorscheme
 colorscheme monokai
