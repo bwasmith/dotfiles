@@ -21,7 +21,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-ragtag'
-Plugin 'alvan/vim-closetag'
 
 call vundle#end()
 filetype plugin indent on " Required
@@ -43,6 +42,7 @@ let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 
 "Nerdtree
 map <C-n> :NERDTreeToggle<CR>
+nmap <leader>n :NERDTreeFind<CR>
 
 "Mappings
 let mapleader=','
@@ -52,6 +52,7 @@ vnoremap <leader># I#<Esc>
 "remove whitespace
 nnoremap <leader>ww :%s/\s\+$//e 
 inoremap <A-o> <Esc>o
+nnoremap <leader>hl :set hlsearch!<CR>
 
 "Colorscheme
 colorscheme monokai
