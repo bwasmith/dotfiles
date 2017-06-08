@@ -21,6 +21,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-ragtag'
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()
 filetype plugin indent on " Required
@@ -41,8 +42,8 @@ let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 "let g:airline#extensions#tabline#show_tab_type = 1
 
 "Nerdtree
-map <C-n> :NERDTreeToggle<CR>
-nmap <leader>n :NERDTreeFind<CR>
+noremap <C-n> :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeFind<CR>
 
 "Mappings
 let mapleader=','
