@@ -22,6 +22,8 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-ragtag'
 Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-endwise'
+Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()
 filetype plugin indent on " Required
@@ -51,9 +53,18 @@ nnoremap <leader>gg :GitGutterToggle<CR>
 nnoremap <leader>gst :Gstatus<CR>
 vnoremap <leader># I#<Esc>
 "remove whitespace
-nnoremap <leader>ww :%s/\s\+$//e 
+nnoremap <leader>ww :%s/\s\+$//e
 inoremap <A-o> <Esc>o
 nnoremap <leader>hl :set hlsearch!<CR>
+
+"Remove whitespace
+function! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 "Colorscheme
 colorscheme monokai
