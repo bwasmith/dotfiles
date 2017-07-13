@@ -23,6 +23,9 @@ alias ssh_aus="ssh -i ~/.ssh/ausstrategyblockscom.pem sblocks@54.66.127.26"
 alias ssh_dev="ssh -i ~/.ssh/devstrategyblockscom.pem sblocks@dev.strategyblocks.com"
 alias ssh_sanity="ssh -i ~/.ssh/sanity.pem sblocks@13.55.245.141"
 alias ssh_sanity_dup="ssh -i ~/.ssh/sanity.pem sblocks@52.65.31.14"
+alias ssh_suse="ssh -i ~/.ssh/devstrategyblockscom.pem sblocks@54.66.195.241"
+alias ssh_suse2="ssh -i ~/.ssh/devstrategyblockscom.pem sblocks@54.206.147.17"
+alias ssh_tomcat8="ssh -i ~/.ssh/devstrategyblockscom.pem sblocks@54.253.35.189"
 
 # tmux reload -> :source-file ~/.tmux.conf
 
