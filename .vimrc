@@ -66,6 +66,9 @@ function! <SID>StripTrailingWhitespaces()
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
+"force write
+cmap w!! w !sudo tee > /dev/null %
+
 "Colorscheme
 colorscheme monokai
 
@@ -91,6 +94,9 @@ set hidden
 set nu
 set noautowrite
 set nowrap
+
+"for clipboard
+set clipboard=unnamed
 
 "Natural splitting
 set splitbelow
