@@ -1,4 +1,3 @@
-
 "to install Vundle:
 "git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 set nocompatible
@@ -9,21 +8,20 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-rails'
-Plugin 'vim-scripts/closetag.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'gcmt/taboo.vim'
-Plugin 'Konfekt/FastFold'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-ragtag'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-endwise'
 Plugin 'jiangmiao/auto-pairs'
+"Plugin 'tpope/vim-surround'
+"Plugin 'tpope/vim-ragtag'
+"Plugin 'kien/ctrlp.vim'
+"Plugin 'tpope/vim-endwise'
+"Plugin 'Konfekt/FastFold'
 
 call vundle#end()
 filetype plugin indent on " Required
@@ -47,11 +45,14 @@ let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 noremap <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>n :NERDTreeFind<CR>
 
+
 "Mappings
 let mapleader=','
 nnoremap <leader>gg :GitGutterToggle<CR>
 nnoremap <leader>gst :Gstatus<CR>
 vnoremap <leader># I#<Esc>
+"nnoremap <leader>, :TabooRename
+
 "remove whitespace
 nnoremap <leader>ww :%s/\s\+$//e
 inoremap <A-o> <Esc>o
@@ -78,7 +79,7 @@ syntax enable
 "Spacing
 set tabstop=2
 set shiftwidth=2
-set noexpandtab
+set expandtab
 set copyindent
 set preserveindent
 set softtabstop=0
