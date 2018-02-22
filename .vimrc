@@ -53,8 +53,6 @@ nnoremap <leader>gst :Gstatus<CR>
 vnoremap <leader># I#<Esc>
 "nnoremap <leader>, :TabooRename
 
-"remove whitespace
-nnoremap <leader>ww :%s/\s\+$//e
 inoremap <A-o> <Esc>o
 nnoremap <leader>hl :set hlsearch!<CR>
 
@@ -65,7 +63,8 @@ function! <SID>StripTrailingWhitespaces()
     %s/\s\+$//e
     call cursor(l, c)
 endfun
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+"autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+nnoremap <leader>ww :call <SID>StripTrailingWhitespaces()<CR>
 
 "force write
 cmap w!! w !sudo tee > /dev/null %
@@ -89,7 +88,9 @@ set foldlevelstart=20
 set foldmethod=syntax
 
 set backspace=indent,eol,start
+set list
 set listchars=tab:>-,trail:~,extends:>,precedes:<
+nnoremap <leader>; :set list!<CR>
 
 set hidden
 set nu
