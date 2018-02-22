@@ -88,9 +88,16 @@ set foldlevelstart=20
 set foldmethod=syntax
 
 set backspace=indent,eol,start
-set list
+"set list
 set listchars=tab:>-,trail:~,extends:>,precedes:<
-nnoremap <leader>; :set list!<CR>
+nnoremap <leader>l :set list!<CR>
+
+highlight ExtraWhitespace ctermbg=darkgreen guibg=darkblue
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match Extrawhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match Extrawhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
 set hidden
 set nu
